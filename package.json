@@ -11,6 +11,18 @@
     "build": "rollup -c",
     "prepare": "npm run clean && npm run format-check && npm run lint"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "npm run format",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ermako27/fluxify.git"
@@ -44,6 +56,8 @@
     "eslint-config-google": "^0.13.0",
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-react": "^7.13.0",
+    "husky": "^2.4.0",
+    "lint-staged": "^8.2.0",
     "prettier": "1.18.2",
     "rimraf": "^2.6.3",
     "rollup": "^1.14.6",
@@ -55,7 +69,6 @@
   "dependencies": {
     "loose-envify": "^1.4.0"
   },
-
   "npmName": "fluxify",
   "sideEffects": false
 }
