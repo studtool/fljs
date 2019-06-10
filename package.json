@@ -1,0 +1,61 @@
+{
+  "name": "fluxify",
+  "version": "0.0.1",
+  "description": "implementation of flux architecture",
+  "scripts": {
+    "clean": "rimraf lib dist es coverage",
+    "format": "prettier --write \"src/**/*.js\"",
+    "format-check": "prettier --list-different \"src/**/*.js\"",
+    "lint": "eslint src",
+    "lint-fix": "eslint --fix src",
+    "build": "rollup -c",
+    "prepare": "npm run clean && npm run format-check && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ermako27/fluxify.git"
+  },
+  "keywords": [
+    "flux"
+  ],
+  "author": "",
+  "main": "lib/fluxify.js",
+  "unpkg": "dist/fluxify.js",
+  "module": "es/fluxify.js",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "src"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ermako27/fluxify/issues"
+  },
+  "homepage": "https://github.com/Ermako27/fluxify#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-react": "^7.13.0",
+    "prettier": "1.18.2",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.14.6",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-node-resolve": "^5.0.1",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.0.0"
+  },
+  "dependencies": {
+    "loose-envify": "^1.4.0"
+  },
+
+  "npmName": "fluxify",
+  "sideEffects": false
+}
