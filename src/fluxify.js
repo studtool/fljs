@@ -1,4 +1,4 @@
-class Fluxify {
+export default class Fluxify {
     constructor() {
         this.storeInstances = [];
     }
@@ -7,5 +7,3 @@ class Fluxify {
         this.observer = observer;
     }
 }
-
-module.exports = new Fluxify;

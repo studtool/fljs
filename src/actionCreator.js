@@ -11,22 +11,25 @@ class ActionCreator {
             /**
              * бросить error если не было передано имя action
              */
-            throw new NoActionNameError;
+            throw new NoActionNameError();
         }
         if (action.body) {
             if (actionData) {
-                payload = action.formatMethod ?
-                    action.formatMethod(action.body, actionData) :
-                    actionData;
+                payload = action.formatMethod
+                    ? action.formatMethod(action.body, actionData)
+                    : actionData;
                 // TODO сделать проверку payload на соответствие body
             } else {
                 /**
-                 * бросить warning о том что с этим action должны быть переданы данные
+                 * бросить warning о том что с этим action
+                 * должны быть переданы данные
                  * так как для этого action есть body.
                  * Но в метод create эти данные не были переданы.
                  */
-                console.warn('This action has body, but no data was passed. ' +
-                'Payload will be empty {} in this case');
+                console.warn(
+                    'This action has body, but no data was passed. ' +
+                        'Payload will be empty {} in this case'
+                );
             }
         } else {
             if (actionData) {
@@ -35,17 +38,17 @@ class ActionCreator {
                  * вместе с action, не описав при это body для данных
                  * этого action
                  */
-                throw new NoActionBodyError;
+                throw new NoActionBodyError();
             }
         }
         BaseStore.handle({action: action.name, payload});
     }
 
     // createBatch(actions) {
-    //     actions.forEach( (action) => {
+    //     actions.forEach( action => {
     //         this.create(action);
     //     });
     // }
 }
 
-export default new ActionCreator;
+export default new ActionCreator();
