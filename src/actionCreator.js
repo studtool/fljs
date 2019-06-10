@@ -45,7 +45,7 @@ class ActionCreator {
     }
 
     // createBatch(actions) {
-    //     actions.forEach( (action) => {
+    //     actions.forEach( action => {
     //         this.create(action);
     //     });
     // }
