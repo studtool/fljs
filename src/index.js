@@ -1,5 +1,5 @@
 import ActionCreator from './actionCreator';
 import BaseStore from './baseStore';
-import Fluxify from './fluxify';
+import Fljs from './fljs';
 
-export {ActionCreator, BaseStore, Fluxify};
+export {ActionCreator, BaseStore, Fljs};
