@@ -1,4 +1,4 @@
-import Fluxify from './fluxify';
+import Fljs from './fljs';
 
 export default class BaseStore {
     constructor(state = {}) {
@@ -6,7 +6,7 @@ export default class BaseStore {
         this.state = {...state};
         this.handledActions = this.getHandledActions();
         this.subscribedComponents = [];
-        Fluxify.storeInstances.push(this);
+        Fljs.storeInstances.push(this);
     }
 
     getState() {
@@ -66,7 +66,7 @@ export default class BaseStore {
     }
 
     static handle({action, payload = {}} = {}) {
-        for (const store of Fluxify.storeInstances) {
+        for (const store of Fljs.storeInstances) {
             store._handle(action, payload);
         }
     }
@@ -99,7 +99,7 @@ export default class BaseStore {
                 );
             } else {
                 // если колбэка нет то просто емитим
-                Fluxify.observer.emit(this.handledActions[action].arguments);
+                Fljs.observer.emit(this.handledActions[action].arguments);
             }
         }
     }

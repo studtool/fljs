@@ -1,4 +1,4 @@
-export default class Fluxify {
+export default class Fljs {
     constructor() {
         this.storeInstances = [];
     }

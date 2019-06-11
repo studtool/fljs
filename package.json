@@ -1,5 +1,5 @@
 {
-  "name": "fluxify",
+  "name": "fljs",
   "version": "0.0.1",
   "description": "implementation of flux architecture",
   "scripts": {
@@ -25,15 +25,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ermako27/fluxify.git"
+    "url": "git+https://github.com/Ermako27/fljs.git"
   },
   "keywords": [
     "flux"
   ],
   "author": "",
-  "main": "lib/fluxify.js",
-  "unpkg": "dist/fluxify.js",
-  "module": "es/fluxify.js",
+  "main": "lib/fljs.js",
+  "unpkg": "dist/fljs.js",
+  "module": "es/fljs.js",
   "files": [
     "dist",
     "lib",
@@ -42,9 +42,9 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ermako27/fluxify/issues"
+    "url": "https://github.com/Ermako27/fljs/issues"
   },
-  "homepage": "https://github.com/Ermako27/fluxify#readme",
+  "homepage": "https://github.com/Ermako27/fljs#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
@@ -69,6 +69,6 @@
   "dependencies": {
     "loose-envify": "^1.4.0"
   },
-  "npmName": "fluxify",
+  "npmName": "fljs",
   "sideEffects": false
 }

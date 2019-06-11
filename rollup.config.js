@@ -1,7 +1,7 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import replace from 'rollup-plugin-replace';
-import { terser } from 'rollup-plugin-terser';
+import {terser} from 'rollup-plugin-terser';
 
 import pkg from './package.json';
 
@@ -9,29 +9,29 @@ export default [
     // CommonJS
     {
         input: 'src/index.js',
-        output: { file: 'lib/fluxify.js', format: 'cjs', indent: false },
+        output: {file: 'lib/fljs.js', format: 'cjs', indent: false},
         external: [
             ...Object.keys(pkg.dependencies || {}),
             ...Object.keys(pkg.peerDependencies || {})
         ],
         plugins: [babel()]
     },
-  
+
     // ES
     {
         input: 'src/index.js',
-        output: { file: 'es/fluxify.js', format: 'es', indent: false },
+        output: {file: 'es/fljs.js', format: 'es', indent: false},
         external: [
             ...Object.keys(pkg.dependencies || {}),
             ...Object.keys(pkg.peerDependencies || {})
         ],
         plugins: [babel()]
     },
-  
+
     // ES for Browsers
     {
         input: 'src/index.js',
-        output: { file: 'es/fluxify.mjs', format: 'es', indent: false },
+        output: {file: 'es/fljs.mjs', format: 'es', indent: false},
         plugins: [
             nodeResolve({
                 jsnext: true
@@ -49,12 +49,12 @@ export default [
             })
         ]
     },
-  
+
     // UMD Development
     {
         input: 'src/index.js',
         output: {
-            file: 'dist/fluxify.js',
+            file: 'dist/fljs.js',
             format: 'umd',
             name: 'Redux',
             indent: false
@@ -71,12 +71,12 @@ export default [
             })
         ]
     },
-  
+
     // UMD Production
     {
         input: 'src/index.js',
         output: {
-            file: 'dist/fluxify.min.js',
+            file: 'dist/fljs.min.js',
             format: 'umd',
             name: 'Redux',
             indent: false
@@ -101,5 +101,4 @@ export default [
             })
         ]
     }
-  ]
-  
+];
